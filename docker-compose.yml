@@ -1,1 +1,10 @@
-
+nginx:
+  image: nginx
+  expose:
+    - 80
+    - 443
+  ports:
+   - "8080:80/tcp"
+   - "8443:443/tcp"
+  security_opt: 
+    - seccomp=./profiles/all_log_6_4.json
