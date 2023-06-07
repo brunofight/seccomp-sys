@@ -47,5 +47,7 @@ def parse_syscalls(syslog_input):
             continue
         # strip duplicate
         syscalls.pop(i)
+        if i == len(syscalls):
+            break
 
     return syscalls
