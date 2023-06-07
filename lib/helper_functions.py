@@ -18,7 +18,7 @@ def get_syscall_dict():
         index = line.split("=")[0]
         value = line.split("=")[1]
         if index.isnumeric():
-            syscall_dict[index] = value
+            syscall_dict[int(index)] = value
 
     return syscall_dict
 
@@ -31,23 +31,20 @@ def parse_syscalls(syslog_input):
         if line == "":
             break
         num = line.split("syscall=")[1].split(" ")[0]
-        syscalls.append(num)
+        syscalls.append(int(num))
 
     syscalls.sort()
+
 
     syscall_dict = get_syscall_dict()
 
     # strip duplicates
+    unique_syscalls = []
     prev_num = -1
     for i in range(len(syscalls)):
         if syscalls[i] != prev_num:
+            unique_syscalls.append(syscall_dict[syscalls[i]])
             prev_num = syscalls[i]
-            # translate to syscall string
-            syscalls[i] = syscall_dict[syscalls[i]]
             continue
-        # strip duplicate
-        syscalls.pop(i)
-        if i == len(syscalls):
-            break
 
-    return syscalls
+    return unique_syscalls
