@@ -1,5 +1,7 @@
 import subprocess
+from lib.sim import simulate
 from lib.helper_functions import *
+
 
 image = "nginx:latest"
 profile = "./profiles/all_log.json"
@@ -24,6 +26,7 @@ while True:
 
 # insert tests here
 
+simulate("nginx")
 
 # gracefully terminate docker to stop running image
 p_docker.terminate()
