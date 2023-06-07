@@ -29,4 +29,7 @@ For quick lookup the generator uses two lists:
 - one containing each Systemcall as a search key and its corresponding group as value
 - one containing each group as indexing attribute containing a list of key-value pairs of Syscall and their attributes (severity, deprecation status)
 
+## Sources/ References
 
+https://unix.stackexchange.com/questions/445507/syscall-number-%E2%86%92-name-mapping-at-runtime
+https://itnext.io/seccomp-in-kubernetes-part-2-crafting-custom-seccomp-profiles-for-your-applications-c28c658f676e
