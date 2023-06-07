@@ -1,8 +1,8 @@
 install:
-    pip install -r requirements.txt
+	pip install -r requirements.txt
 
 start:
-    docker-compose up
+	docker-compose up
 
 complain-test:
 	sudo tail -f /var/log/syslog | grep audit | grep "type=1326" > complain-log.json &
