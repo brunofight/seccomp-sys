@@ -43,7 +43,7 @@ def parse_syscalls(syslog_input):
         if syscalls[i] != prev_num:
             prev_num = syscalls[i]
             # translate to syscall string
-            syscalls[i] = syscall_dict[i]
+            syscalls[i] = syscall_dict[syscalls[i]]
             continue
         # strip duplicate
         syscalls.pop(i)
