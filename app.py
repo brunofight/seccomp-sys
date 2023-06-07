@@ -35,5 +35,8 @@ p_tail.communicate()
 p_grep.terminate()
 
 output, err = p_grep.communicate()
-parse_syscalls(output)
+syscalls = parse_syscalls(output)
+
+for syscall in syscalls:
+    print(syscall)
 
