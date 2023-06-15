@@ -1,0 +1,91 @@
+{
+	"defaultAction": "SCMP_ACT_ALLOW",
+	"defaultErrnoRet": 1,
+	"archMap": [
+		{
+			"architecture": "SCMP_ARCH_X86_64",
+			"subArchitectures": [
+				"SCMP_ARCH_X86",
+				"SCMP_ARCH_X32"
+			]
+		}
+	],
+
+    "syscalls": [
+            {
+                "names": [
+                        "clone",
+                        "ptrace",
+                        "syslog",
+                        "uselib",
+                        "personality",
+                        "ustat",
+                        "sysfs",
+                        "vhangup",
+                        "pivot_root",
+                        "_sysctl",
+                        "chroot",
+                        "acct",
+                        "settimeofday",
+                        "mount",
+                        "umount2",
+                        "swapon",
+                        "swapoff",
+                        "reboot",
+                        "sethostname",
+                        "setdomainname",
+                        "iopl",
+                        "ioperm",
+                        "create_module",
+                        "init_module",
+                        "delete_module",
+                        "get_kernel_syms",
+                        "query_module",
+                        "quotactl",
+                        "nfsservctl",
+                        "getpmsg",
+                        "lookup_dcookie",
+                        "clock_settime",
+                        "mbind",
+                        "set_mempolicy",
+                        "get_mempolicy",
+                        "kexec_load",
+                        "add_key",
+                        "request_key",
+                        "keyctl",
+                        "migrate_pages",
+                        "unshare",
+                        "move_pages",
+                        "perf_event_open",
+                        "fanotify_init",
+                        "name_to_handle_at",
+                        "open_by_handle_at",
+                        "setns",
+                        "process_vm_readv",
+                        "process_vm_writev",
+                        "kcmp",
+                        "finit_module",
+                        "kexec_file_load",
+                        "bpf",
+                        "userfaultfd",
+                        "open_tree",
+                        "move_mount",
+                        "fsopen",
+                        "fsconfig",
+                        "fsmount",
+                        "fspick",
+                        "clone3",
+                        "pidfd_getfd",
+                        "process_madvise",
+                        "mount_setattr",
+                        "quotactl_fd",
+                        "set_mempolicy_home_node"
+                                     
+                    ],
+                    "action": "SCMP_ACT_ERRNO"
+                }
+            ]
+}
+
+
+
