@@ -82,7 +82,6 @@
                         "clock_adjtime",
                         "seccomp",
                         "restart_syscall",
-                        "rt_sigreturn",
                         "mq_notify",
                         "remap_file_pages",
                         "rt_tgsigqueueinfo",
@@ -104,6 +103,43 @@
                                      
                     ],
                     "action": "SCMP_ACT_ERRNO"
+                },
+	    {
+                "names": [                        
+			"setuid",
+			"setreuid",
+			"setresuid",
+			"setfsuid",
+			"setgid",
+			"setregid",
+			"setresgid",
+			"setfsgid",
+			"setgroups",
+			"capset",
+			"setpriority",
+			"setrlimit",
+			"prlimit",
+			"io_prio_set",
+			"prctl",
+			"chmod",
+			"chmodat",
+			"fchmodat",
+			"umask",
+			"chown",
+			"fchown",
+			"fchownat",
+			"lchown",
+			"execve",
+			"execveat",
+			"getpgid",
+			"setpgid",
+			"getsid",
+			"setsid",
+			"getpgrp",
+			"setpgrp",
+			"rt_sigqueueinfo"
+                    ],
+                    "action": "SCMP_ACT_LOG"
                 }
             ]
 }
