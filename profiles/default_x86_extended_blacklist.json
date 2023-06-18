@@ -136,8 +136,7 @@
 			"getsid",
 			"setsid",
 			"getpgrp",
-			"setpgrp",
-			"rt_sigqueueinfo"
+			"setpgrp"
                     ],
                     "action": "SCMP_ACT_LOG"
                 }
