@@ -10,7 +10,7 @@ start:
 	docker-compose up
 
 nginx:
-	docker run -d --rm --name nginx nginx:latest
+	docker run -d --rm --name nginx -p 8080:80 nginx:latest
 
 sysdig-nginx:
 	sysdig -pc container.name=nginx -S
