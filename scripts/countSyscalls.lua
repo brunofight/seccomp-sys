@@ -18,8 +18,6 @@ end
 
 syscall_count = {}
 
-
--- Event parsing callback
 function on_event()
 
 	local eType = evt.get_type()
