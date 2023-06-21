@@ -13,7 +13,7 @@ nginx:
 	docker run -d --rm --name nginx -p 8080:80 nginx:latest
 
 sysdig-nginx:
-	sysdig -pc container.name=nginx -S
+	sysdig -pc -c ./scripts/countSyscalls container.name=nginx -S
 
 web-serving-start:	
 	docker run -it --net=host --name=database_server cloudsuite/web-serving:db_server
