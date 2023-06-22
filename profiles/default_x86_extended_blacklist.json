@@ -144,12 +144,12 @@
 			"names": [
 				"clone"
 			],
-			"action": "SCMP_ACT_ERRNO",
+			"action": "SCMP_ACT_ALLOW",
 			"args": [
 				{
 					"index": 0,
 					"value": 2114060288,
-					"op": "SCMP_CMP_MASKED_NE"
+					"op": "SCMP_CMP_MASKED_EQ"
 				}
 			]
 		}
