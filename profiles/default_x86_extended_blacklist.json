@@ -14,7 +14,6 @@
     "syscalls": [
             {
                 "names": [
-                        "clone",
                         "ptrace",
                         "syslog",
                         "uselib",
@@ -139,8 +138,22 @@
 			"setpgrp"
                     ],
                     "action": "SCMP_ACT_LOG"
-                }
-            ]
+                },
+
+        {
+			"names": [
+				"clone"
+			],
+			"action": "SCMP_ACT_ERRNO",
+			"args": [
+				{
+					"index": 0,
+					"value": 2114060288,
+					"op": "SCMP_CMP_MASKED_NEQ"
+				}
+			]
+		}
+    ]
 }
 
 

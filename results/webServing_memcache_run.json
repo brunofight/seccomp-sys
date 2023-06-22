@@ -1,0 +1,20 @@
+{
+"accept" : 190,
+"getpeername" : 190,
+"epoll_ctl" : 386,
+"sendmsg" : 764,
+"mmap" : 3,
+"futex" : 36,
+"newfstatat" : 1,
+"rt_sigreturn" : 1,
+"rt_sigprocmask" : 9,
+"madvise" : 9,
+"munmap" : 6,
+"close" : 207,
+"read" : 971,
+"write" : 195,
+"exit_group" : 1,
+"exit" : 9,
+"clock_nanosleep" : 1457,
+"epoll_wait" : 1701
+}

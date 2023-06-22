@@ -57,10 +57,31 @@ def get_group_statistics(result):
     print(stats)
     print("-------------------")
 
-file_result = open('../results/dataServing.json', 'r')
-result = json.load(file_result)
 
+def compare_captures(cap1, cap2):
+    for syscall in cap1:
+        if not (syscall in cap2):
+            print(syscall)
+
+    for syscall in cap2:
+        if not (syscall in cap1):
+            print(syscall)
+
+
+
+file_result = open('../results/webServing_db.json', 'r')
+result = json.load(file_result)
 get_group_statistics(result)
+
+
+'''
+cap1 = json.load(open('../results/dataServing.json', 'r'))
+cap2 = json.load(open('../results/dataServing_load.json', 'r'))
+
+compare_captures(cap1, cap2)
+'''
+
+
 
 
 

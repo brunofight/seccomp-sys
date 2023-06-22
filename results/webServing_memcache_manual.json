@@ -1,0 +1,21 @@
+{
+"epoll_wait" : 3023,
+"accept" : 244,
+"getpeername" : 244,
+"epoll_ctl" : 494,
+"sendmsg" : 980,
+"mmap" : 3,
+"futex" : 76,
+"newfstatat" : 1,
+"rt_sigreturn" : 1,
+"rt_sigprocmask" : 9,
+"madvise" : 9,
+"munmap" : 6,
+"close" : 261,
+"read" : 1248,
+"write" : 249,
+"exit_group" : 1,
+"exit" : 9,
+"clock_nanosleep" : 2492
+}
+
