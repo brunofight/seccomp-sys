@@ -1,0 +1,554 @@
+{
+ "File Descriptor based signals/events": [
+  "signalfd",
+  "signalfd64",
+  "eventfd",
+  "eventfd2"
+ ],
+ "View pending signals": [
+  "rt_sigpending"
+ ],
+ "Modify Signal Receive Behavior": [
+  "rt_sigaction",
+  "rt_sigprocmask",
+  "sigaltstack"
+ ],
+ "Send signal": [
+  "kill",
+  "tkill",
+  "tgkill",
+  "rt_sigqueueinfo",
+  "rt_tgsigqueueinfo",
+  "alarm",
+  "pidfd_send_signal"
+ ],
+ "Pipes": [
+  "pipe",
+  "pipe2",
+  "tee",
+  "splice",
+  "vmsplice"
+ ],
+ "System V message queues": [
+  "msgget",
+  "msgctl",
+  "msgrcv",
+  "msgsnd"
+ ],
+ "POSIX message queue": [
+  "mq_open",
+  "mq_unlink",
+  "mq_timedsend",
+  "mq_timedreceive",
+  "mq_notify",
+  "mq_getsetattr"
+ ],
+ "System V semaphores": [
+  "semget",
+  "semctl",
+  "semop",
+  "semtimedop"
+ ],
+ "File locking": [
+  "flock"
+ ],
+ "Futex (thread locking)": [
+  "futex",
+  "get_robust_list",
+  "set_robust_list",
+  "futex_waitv",
+  "set_tid_address"
+ ],
+ "System V shared memory": [
+  "shmget",
+  "shmctl",
+  "shmat",
+  "shmdt"
+ ],
+ "Socket Send": [
+  "sendto",
+  "sendmsg",
+  "sendfile",
+  "sendmmsg"
+ ],
+ "Socket Receive": [
+  "recvmsg",
+  "recvfrom",
+  "recvmmsg"
+ ],
+ "Socket Lifecycle": [
+  "socket",
+  "bind",
+  "listen",
+  "connect",
+  "shutdown",
+  "accept",
+  "accept4",
+  "socketpair",
+  "setsockopt"
+ ],
+ "Socket information": [
+  "getsockname",
+  "getpeername",
+  "getsockname",
+  "getsockopt"
+ ],
+ "Streams Kernel Extension (unimplemented)": [
+  "getpmsg"
+ ],
+ "mount /unmount filesystem": [
+  "mount",
+  "umount2",
+  "mount_setattr",
+  "fsmount",
+  "fsopen",
+  "move_mount",
+  "open_tree",
+  "fspick"
+ ],
+ "Filesystem Information": [
+  "statfs",
+  "fstatfs",
+  "ustat",
+  "fsinfo"
+ ],
+ "Create Filesystem Node": [
+  "mknod",
+  "mknodat"
+ ],
+ "Memory Mappings": [
+  "mmap",
+  "munmap",
+  "mremap",
+  "mincore",
+  "remap_file_pages",
+  "process_mrelease"
+ ],
+ "Monitor page-faults": [
+  "userfaultfd"
+ ],
+ "Protect Memory Range": [
+  "mprotect",
+  "pkey_mprotect",
+  "pkey_alloc",
+  "pkey_free"
+ ],
+ "Lock Pages in RAM": [
+  "mlock",
+  "mlock2",
+  "mlockall",
+  "madvise",
+  "munlock",
+  "munlockall",
+  "process_madvise"
+ ],
+ "NUMA / Multiprocessor": [
+  "mbind",
+  "set_mempolicy",
+  "get_mempolicy",
+  "migrate_pages",
+  "move_pages",
+  "getcpu",
+  "membarrier",
+  "set_mempolicy_home_node"
+ ],
+ "set device (partition) as swap area": [
+  "swapon",
+  "swapoff"
+ ],
+ "Raw I/O Device access": [
+  "iopl",
+  "ioperm"
+ ],
+ "Delete": [
+  "rmdir",
+  "unlink",
+  "unlinkat"
+ ],
+ "Symbolic Links": [
+  "symlink",
+  "symlinkat",
+  "readlink",
+  "readlinkat"
+ ],
+ "Hard Links": [
+  "link",
+  "linkat"
+ ],
+ "Move/Rename": [
+  "rename",
+  "renameat",
+  "renameat2"
+ ],
+ "INotify, File Event Listener": [
+  "inotify_init",
+  "inotify_init1",
+  "inotify_add_watch",
+  "inotify_rm_watch"
+ ],
+ "fanotify, File Event Listener": [
+  "fanotify_mark",
+  "fanotify_init"
+ ],
+ "Make new Directory": [
+  "mkdir",
+  "mkdirat"
+ ],
+ "Modify Extended File Attributes (MetaData)": [
+  "setxattr",
+  "lsetxattr",
+  "fsetxattr",
+  "removexattr",
+  "lremovexattr",
+  "fremovexattr"
+ ],
+ "Get/List Extended File Attributes (MetaData)": [
+  "listxattr",
+  "llistxattr",
+  "flistxattr",
+  "getxattr",
+  "lgetxattr",
+  "fgetxattr"
+ ],
+ "Modify File Access/Modification time": [
+  "utime",
+  "utimes",
+  "futimesat",
+  "utimensat"
+ ],
+ "Read Directory": [
+  "getdents",
+  "getdents64"
+ ],
+ "Read": [
+  "read",
+  "readv",
+  "preadv",
+  "preadv2",
+  "pread64"
+ ],
+ "Open": [
+  "open",
+  "openat",
+  "openat2",
+  "creat",
+  "memfd_create",
+  "memfd_secret"
+ ],
+ "Duplicate File Descriptor": [
+  "dup",
+  "dup2",
+  "dup3"
+ ],
+ "Set file size": [
+  "truncate",
+  "ftruncate",
+  "fallocate"
+ ],
+ "set read/write pointer": [
+  "lseek"
+ ],
+ "Synchronous Polling": [
+  "select",
+  "pselect6",
+  "poll",
+  "ppoll"
+ ],
+ "Evented Polling": [
+  "epoll_create",
+  "epoll_create1",
+  "epoll_ctl_old",
+  "epoll_wait_old",
+  "epoll_wait",
+  "epoll_pwait",
+  "epoll_pwait2",
+  "epoll_ctl"
+ ],
+ "IO uring (asynchronous IO)": [
+  "io_uring_setup",
+  "io_uring_enter",
+  "io_uring_register"
+ ],
+ "Close File Descriptor": [
+  "close",
+  "close_range"
+ ],
+ "Universal File I/O": [
+  "fcntl",
+  "ioctl"
+ ],
+ "File Information": [
+  "stat",
+  "fstat",
+  "lstat",
+  "newfstatat",
+  "statx"
+ ],
+ "check if process has permission to access file": [
+  "faccessat",
+  "access",
+  "faccessat2"
+ ],
+ "Asynchronous IO": [
+  "io_setup",
+  "io_submit",
+  "io_cancel",
+  "io_destroy",
+  "io_getevents",
+  "io_pgetevents"
+ ],
+ "File access kernel optimization": [
+  "fadvise64",
+  "readahead"
+ ],
+ "Synchronize File Changes to disk": [
+  "fsync",
+  "fdatasync",
+  "msync",
+  "sync_file_range",
+  "syncfs",
+  "sync"
+ ],
+ "Open File Descriptor via handle": [
+  "name_to_handle_at",
+  "open_by_handle_at"
+ ],
+ "Process File Descriptors": [
+  "pidfd_open",
+  "pidfd_getfd"
+ ],
+ "Write": [
+  "write",
+  "writev",
+  "pwrite64",
+  "pwritev",
+  "pwritev2",
+  "copy_file_range"
+ ],
+ "Sleep/Pause/Suspend": [
+  "rt_sigsuspend",
+  "rt_sigwaitinfo",
+  "rt_sigtimedwait",
+  "pause",
+  "nanosleep",
+  "clock_nanosleep"
+ ],
+ "Change working directory": [
+  "chdir",
+  "fchdir"
+ ],
+ "Change Process root directory": [
+  "chroot",
+  "pivot_root"
+ ],
+ "Process Creation": [
+  "execve",
+  "execveat",
+  "fork",
+  "vfork",
+  "clone",
+  "clone3"
+ ],
+ "Process Termination": [
+  "exit",
+  "exit_group"
+ ],
+ "In Process Timers": [
+  "setitimer",
+  "getitimer",
+  "timer_create",
+  "timer_settime",
+  "timer_delete",
+  "timer_gettime",
+  "timer_getoverrun",
+  "timerfd_create",
+  "timerfd_settime",
+  "timerfdgettime"
+ ],
+ "Process Accounting": [
+  "acct"
+ ],
+ "Modify Resource Limit": [
+  "setpriority",
+  "setrlimit",
+  "ioprio_set",
+  "prlimit64",
+  "quotactl",
+  "quotactl_fd"
+ ],
+ "Get Resource Limits/ Usage": [
+  "getpriority",
+  "getrlimit",
+  "getrusage",
+  "ioprio_get"
+ ],
+ "Allocate / Deallocate Memory": [
+  "brk"
+ ],
+ "Realtime scheduling API": [
+  "sched_get_priority_min",
+  "sched_get_priority_max",
+  "sched_setscheduler",
+  "sched_getscheduler",
+  "sched_getparam",
+  "sched_setparam",
+  "sched_rr_get_interval",
+  "sched_yield",
+  "sched_setattr",
+  "sched_getattr"
+ ],
+ "Confine Execution to specific CPU": [
+  "sched_setaffinity",
+  "sched_getaffinity"
+ ],
+ "Wait for child process": [
+  "wait4",
+  "waitid"
+ ],
+ "Get Process Identifiers": [
+  "getpid",
+  "getppid",
+  "gettid",
+  "getpgrp",
+  "getpgid",
+  "getsid"
+ ],
+ "set Process Identifiers": [
+  "setsid",
+  "setpgid"
+ ],
+ "Direct Interaction with other process": [
+  "ptrace",
+  "kcmp",
+  "process_vm_readv",
+  "process_vm_writev",
+  "perf_event_open"
+ ],
+ "Thread Local Storage information": [
+  "get_thread_area",
+  "set_thread_area"
+ ],
+ "Restartable Sequences": [
+  "rseq"
+ ],
+ "Load shared library": [
+  "uselib"
+ ],
+ "Universal Process Control": [
+  "prctl",
+  "arch_prctl",
+  "personality"
+ ],
+ "Per Process Local Descriptor Table": [
+  "modify_ldt"
+ ],
+ "Modify Process user/group context": [
+  "setuid",
+  "setreuid",
+  "setresuid",
+  "setfsuid",
+  "setgid",
+  "setregid",
+  "setresgid",
+  "setfsgid",
+  "setgroups"
+ ],
+ "Get Process user/group context": [
+  "getuid",
+  "geteuid",
+  "getresuid",
+  "getgid",
+  "getegid",
+  "getresgid",
+  "getgroups"
+ ],
+ "change file ownership": [
+  "chown",
+  "fchown",
+  "lchown",
+  "fchownat"
+ ],
+ "change file permissions": [
+  "chmod",
+  "fchmod",
+  "fchmodat",
+  "umask"
+ ],
+ "Kernel Keyring": [
+  "add_key",
+  "request_key",
+  "keyctl"
+ ],
+ "Process namespaces": [
+  "set_ns",
+  "unshare"
+ ],
+ "Capabilities": [
+  "capset",
+  "capget"
+ ],
+ "Landlock Security Module": [
+  "landlock_create_ruleset",
+  "landlock_add_rule",
+  "landlock_restrict_self"
+ ],
+ "Modify System Clock": [
+  "settimeofday",
+  "clock_settime",
+  "clock_adjtime",
+  "adjtimex"
+ ],
+ "Get System Clock": [
+  "gettimeofday",
+  "clock_getres",
+  "time",
+  "clock_gettime",
+  "times"
+ ],
+ "Kernel Modules": [
+  "create_module",
+  "init_module",
+  "delete_module",
+  "query_module",
+  "get_kernel_syms",
+  "finitmodule"
+ ],
+ "BPF": [
+  "bpf",
+  "seccomp"
+ ],
+ "Random  Generator": [
+  "getrandom"
+ ],
+ "System Information": [
+  "sysinfo",
+  "uname",
+  "sysfs"
+ ],
+ "Reboot": [
+  "reboot"
+ ],
+ "Modify System Information": [
+  "sethostname",
+  "setdomainname",
+  "_sysctl"
+ ],
+ "Load new Kernel": [
+  "kexec_load",
+  "kexec_file_load"
+ ],
+ "Modify System Log": [
+  "syslog"
+ ],
+ "Kernel NFS Daemon": [
+  "nfsserverctl"
+ ],
+ "Hang up current terminal": [
+  "vhangup"
+ ],
+ "Syscalls only used by kernel": [
+  "rt_sigreturn",
+  "restart_syscall",
+  "lookup_dcookie"
+ ]
+}

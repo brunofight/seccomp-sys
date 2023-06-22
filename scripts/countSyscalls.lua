@@ -12,7 +12,7 @@ function on_init()
 	chisel.set_filter("not (evt.type in ('switch', 'scapevent', 'useradded'," ..
 		"'groupadded', 'userdeleted', 'groupdeleted', 'pluginevent', 'container'," ..
 		"'page_fault', 'infra', 'notification', 'mesos', 'tracer', 'k8s', 'cpu_hotplug'," ..
-		"'signaldeliver', 'drop', 'getcwd')) and evt.dir='>'")
+		"'signaldeliver', 'drop', 'getcwd', 'procinfo', 'procexit')) and evt.dir='>'")
 	return true
 end
 
