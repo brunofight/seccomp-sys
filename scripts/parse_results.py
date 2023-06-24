@@ -1,14 +1,26 @@
 import json
 
+file_syscalls = open('../resources/syscalls_with_groups.json', 'r')
+syscalls_with_groups = json.load(file_syscalls)
+
+file_groups = open('../resources/groups_with_syscalls.json', 'r')
+groups_with_syscalls = json.load(file_groups)
+
+
+def get_group(syscall):
+    return syscalls_with_groups[syscall]
+
+
+def get_groups(syscalls):
+    groups = []
+    for syscall in syscalls:
+        group_name = get_group(syscall)
+        if not (group_name in groups):
+            groups.append(group_name)
+    return groups
+
 
 def get_group_statistics(result):
-
-    file_syscalls = open('../resources/syscalls_with_groups.json', 'r')
-    syscalls_with_groups = json.load(file_syscalls)
-
-    file_groups = open('../resources/groups_with_syscalls.json', 'r')
-    groups_with_syscalls = json.load(file_groups)
-
     extended_blacklist = json.load(open('../profiles/default_x86_extended_blacklist.json'))["syscalls"]
     extended_blacklist_block = extended_blacklist[0]["names"]
     extended_blacklist_log = extended_blacklist[1]["names"]
@@ -27,7 +39,7 @@ def get_group_statistics(result):
         if syscall in extended_blacklist_log:
             blacklist_log_hits.append(syscall)
 
-        group_name = syscalls_with_groups[syscall]
+        group_name = get_group(syscall)
         # get groups from systemization used
         if group_name in stats:
             stats[group_name] += int(result[syscall])
@@ -58,31 +70,57 @@ def get_group_statistics(result):
     print("-------------------")
 
 
+def compare(l1, l2):
+    difference = []
+    for entity in l1:
+        if not (entity in l2):
+            difference.append(entity)
+    return difference
+
+
+def extrapolated_syscalls(syscalls_1, groups_2):
+    # taking syscalls from one capture and groups from other capture as input -> get syscalls extrapolated through groups
+    for syscall in syscalls_1:
+        group_name = get_group(syscall)
+        if group_name in groups_2:
+            print(syscall + " extrapolated through " + group_name)
+
+
 def compare_captures(cap1, cap2):
-    for syscall in cap1:
-        if not (syscall in cap2):
-            print(syscall)
+    dif_1_2 = compare(cap1, cap2)
+    dif_2_1 = compare(cap2, cap1)
 
-    for syscall in cap2:
-        if not (syscall in cap1):
-            print(syscall)
+    print("Syscalls in Capture 1, not in 2")
+    print(dif_1_2)
 
+    print("Syscalls in Capture 2, not in 1")
+    print(dif_2_1)
 
+    print("-------------------")
+    groups_cap1 = get_groups(cap1)
+    groups_cap2 = get_groups(cap2)
 
-file_result = open('../results/ycsb/mongo_b.json', 'r')
-result = json.load(file_result)
-get_group_statistics(result)
+    groups_dif_1_2 = compare(groups_cap1, groups_cap2)
+    groups_dif_2_1 = compare(groups_cap2, groups_cap1)
 
-cap1 = json.load(open('../results/ycsb/mongo_b.json', 'r'))
-cap2 = json.load(open('../results/ycsb/mongo_f.json', 'r'))
+    print("Groups in Capture 1, not in 2")
+    print(groups_dif_1_2)
+    print("Groups in Capture 2, not in 1")
+    print(groups_dif_2_1)
+    print("-------------------- Capture 2 enriched by:")
 
-compare_captures(cap1, cap2)
+    extrapolated_syscalls(dif_1_2, groups_cap2)
 
+    print("-------------------- Capture 1 enriched by:")
 
+    extrapolated_syscalls(dif_2_1, groups_cap1)
 
+'''
+file_result = open('../results/cloudsuite/webServing_memcache.json', 'r')
+get_group_statistics(json.load(file_result))
+'''
 
+capture1 = json.load(open('../results/ycsb/mongo_a.json', 'r'))
+capture2 = json.load(open('../results/ycsb/mongo_b.json', 'r'))
 
-
-
-
-
+compare_captures(capture1, capture2)
