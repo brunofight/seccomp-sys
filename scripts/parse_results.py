@@ -69,17 +69,15 @@ def compare_captures(cap1, cap2):
 
 
 
-file_result = open('../results/webServing_db.json', 'r')
+file_result = open('../results/ycsb/mongo_b.json', 'r')
 result = json.load(file_result)
 get_group_statistics(result)
 
-
-'''
-cap1 = json.load(open('../results/dataServing.json', 'r'))
-cap2 = json.load(open('../results/dataServing_load.json', 'r'))
+cap1 = json.load(open('../results/ycsb/mongo_b.json', 'r'))
+cap2 = json.load(open('../results/ycsb/mongo_f.json', 'r'))
 
 compare_captures(cap1, cap2)
-'''
+
 
 
 
