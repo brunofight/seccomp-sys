@@ -84,7 +84,7 @@
 "arch_prctl" : 158,
 "access" : 1767,
 "fstat" : 4013,
-"pread" : 2376,
+"pread64" : 2376,
 "mprotect" : 703,
 "munmap" : 360,
 "geteuid" : 73,
@@ -98,7 +98,7 @@
 "connect" : 8,
 "lseek" : 11446,
 "getpgrp" : 1,
-"prlimit" : 75,
+"prlimit64" : 75,
 "dup2" : 113,
 "set_tid_address" : 34
 }

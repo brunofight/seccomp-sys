@@ -1,4 +1,5 @@
 import json
+import numpy as np
 
 file_syscalls = open('../resources/syscalls_with_groups.json', 'r')
 syscalls_with_groups = json.load(file_syscalls)
@@ -120,7 +121,12 @@ file_result = open('../results/cloudsuite/webServing_memcache.json', 'r')
 get_group_statistics(json.load(file_result))
 '''
 
-capture1 = json.load(open('../results/ycsb/mongo_a.json', 'r'))
-capture2 = json.load(open('../results/ycsb/mongo_b.json', 'r'))
+files = ['../results/ycsb/mongo_a.json', '../results/ycsb/mongo_b.json', '../results/ycsb/mongo_f.json']
+captures = []
 
-compare_captures(capture1, capture2)
+for file in files:
+    captures.append(json.load(open(file, 'r')).keys())
+
+
+
+#compare_captures(capture1, capture2)
