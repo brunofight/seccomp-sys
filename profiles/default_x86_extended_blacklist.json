@@ -95,11 +95,9 @@
                         "sched_getparam",
                         "sched_setparam",
                         "sched_rr_get_interval",
-                        "sched_yield",
                         "sched_setattr",
                         "sched_getattr",
-                        "sched_setaffinity",
-                        "sched_getaffinity"
+                        "sched_setaffinity"
                                      
                     ],
                     "action": "SCMP_ACT_ERRNO"
