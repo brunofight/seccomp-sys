@@ -14,7 +14,6 @@
     "syscalls": [
             {
                 "names": [
-                        "clone",
                         "ptrace",
                         "syslog",
                         "uselib",
@@ -143,7 +142,7 @@
 			"names": [
 				"clone"
 			],
-			"action": "SCMP_ACT_ALLOW",
+			"action": "SCMP_ACT_ERRNO",
 			"args": [
 				{
 					"index": 0,
