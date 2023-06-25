@@ -14,6 +14,7 @@
     "syscalls": [
             {
                 "names": [
+                        "clone",
                         "ptrace",
                         "syslog",
                         "uselib",
