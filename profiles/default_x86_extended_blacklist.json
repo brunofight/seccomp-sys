@@ -74,7 +74,6 @@
                         "fsconfig",
                         "fsmount",
                         "fspick",
-                        "clone3",
                         "mount_setattr",
                         "quotactl_fd",
                         "set_mempolicy_home_node",
@@ -140,7 +139,8 @@
 
         {
 			"names": [
-				"clone"
+				"clone",
+                "clone3"
 			],
 			"action": "SCMP_ACT_ERRNO",
 			"args": [
