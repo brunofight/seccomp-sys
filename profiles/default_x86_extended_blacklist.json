@@ -146,7 +146,7 @@
 			"args": [
 				{
 					"index": 0,
-					"value": 2114060288,
+					"value": "CLONE_NEWNS|CLONE_NEWCGROUP|CLONE_NEWUTS|CLONE_NEWIPC|CLONE_NEWUSER|CLONE_NEWPID|CLONE_NEWNET",
 					"op": "SCMP_CMP_MASKED_EQ"
 				}
 			]
